@@ -42,17 +42,15 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
   const navLinks = [
     { to: '/', label: 'Home', onClick: () => navigate('/') },
     { to: '/about', label: 'About', onClick: () => navigate('/about') },
-    { to: '/events', label: 'Events', onClick: () => navigate('/events') },
+    { to: '/events', label: 'Our Solution', onClick: () => navigate('/events') },
     { to: '/faqs', label: 'FAQs', onClick: () => navigate('/faqs') },
-    { to: '/team', label: 'Team', onClick: () => navigate('/team') },
-    { to: '/contact', label: 'Contact', onClick: () => navigate('/contact') },
+    { to: '/team', label: 'Team', onClick: () => navigate('/team') }
   ];
 
   const portalLinks = [
-    { to: '/portal1', label: 'Student Portal', icon: '🎓' },
-    { to: '/portal2', label: 'Faculty Portal', icon: '👨‍🏫' },
-    { to: '/portal3', label: 'Admin Portal', icon: '⚙️' },
-    { to: '/portal4', label: 'Alumni Portal', icon: '🎖️' },
+    { url: 'https://mav-aug-7844-0006.lab.service-now.com/cp', label: 'Citizen Portal', icon: '' },
+    { url: 'https://mav-aug-7844-0006.lab.service-now.com/vp', label: 'Volunteer Portal', icon: '' },
+    { url: 'https://mav-aug-7844-0006.lab.service-now.com/dp', label: 'Department Portal', icon: '' }
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -94,7 +92,7 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
             <div className="relative portals-menu-container ml-4">
               <button
                 onClick={togglePortalsMenu}
-                className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#e7fefe] bg-opacity-20 hover:bg-opacity-30 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#f9f871] focus:ring-opacity-50"
+                className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#e7fefe]  bg-opacity-20 hover:bg-opacity-30 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#f9f871] focus:ring-opacity-50"
                 aria-label="Portals menu"
                 aria-expanded={portalsMenuOpen}
               >
@@ -103,7 +101,7 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
                   fill="currentColor" 
                   viewBox="0 0 24 24"
                 >
-                  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 6.5L12 3L9 6.5L3 7V9L9 8.5V21H11V12H13V21H15V8.5L21 9Z"/>
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                 </svg>
               </button>
 
@@ -114,18 +112,17 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
                     Portal Access
                   </div>
                   {portalLinks.map((portal, index) => (
-                    <Link
+                    <a
                       key={index}
-                      to={portal.to}
+                      href={portal.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-150"
-                      onClick={() => {
-                        setPortalsMenuOpen(false);
-                        navigate(portal.to);
-                      }}
+                      onClick={() => setPortalsMenuOpen(false)}
                     >
                       <span className="mr-3 text-lg">{portal.icon}</span>
                       <span>{portal.label}</span>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               )}
@@ -178,18 +175,17 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
                 <div className="border-t border-[#e7fefe] border-opacity-20 mt-4 pt-4">
                   <div className="text-xs font-semibold text-[#e7fefe] mb-2 px-3">Portals</div>
                   {portalLinks.map((portal, index) => (
-                    <Link
+                    <a
                       key={index}
-                      to={portal.to}
+                      href={portal.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center px-3 py-2 text-sm text-[#e7fefe] hover:text-[#f4e4c9] hover:bg-[#e7fefe] hover:bg-opacity-10 rounded-md transition-colors duration-200"
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        navigate(portal.to);
-                      }}
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       <span className="mr-3">{portal.icon}</span>
                       <span>{portal.label}</span>
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>

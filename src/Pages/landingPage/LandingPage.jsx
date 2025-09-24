@@ -3,8 +3,8 @@ import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/ap
 
 const WeatherDashboard = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const [selectedLocation, setSelectedLocation] = useState('Bengaluru');
-  const [searchQuery, setSearchQuery] = useState('Bengaluru');
+  const [selectedLocation, setSelectedLocation] = useState('Hyderabad');
+  const [searchQuery, setSearchQuery] = useState('Hyderabad');
   const [selectedAlert, setSelectedAlert] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);

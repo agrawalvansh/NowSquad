@@ -53,6 +53,17 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
     { url: 'https://mav-aug-7844-0006.lab.service-now.com/dp', label: 'Department Portal', icon: '' }
   ];
 
+  // Function to handle APK download
+  const handleDownloadApp = () => {
+    const apkPath = '/apk/RR HackNow Offline!!.apk'; // Update this path to your APK file location
+    const link = document.createElement('a');
+    link.href = apkPath;
+    link.download = 'ResQLink.apk'; // This will be the downloaded file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const isActive = (path) => location.pathname === path;
 
   return (
@@ -88,66 +99,86 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
               </div>
             </div>
 
-            {/* Portals Menu - Right Side */}
-            <div className="relative portals-menu-container ml-4">
+            {/* Right side buttons container */}
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              {/* Download App Button */}
               <button
-                onClick={togglePortalsMenu}
-                className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#e7fefe]  bg-opacity-20 hover:bg-opacity-30 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#f9f871] focus:ring-opacity-50"
-                aria-label="Portals menu"
-                aria-expanded={portalsMenuOpen}
+                onClick={handleDownloadApp}
+                className="flex items-center justify-center px-2 sm:px-3 py-1.5 sm:py-2 bg-[#f9f871] text-[#030455] text-xs sm:text-sm font-semibold rounded-md hover:bg-[#f4e4c9] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#f9f871] focus:ring-opacity-50 whitespace-nowrap"
+                aria-label="Download offline app"
               >
                 <svg 
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-[#e7fefe]" 
+                  className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" 
                   fill="currentColor" 
                   viewBox="0 0 24 24"
                 >
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                  <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
                 </svg>
+                <span className="hidden sm:inline">Download App</span>
+                <span className="sm:hidden">App</span>
               </button>
 
-              {/* Portals Dropdown Menu */}
-              {portalsMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
-                  <div className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">
-                    Portal Access
-                  </div>
-                  {portalLinks.map((portal, index) => (
-                    <a
-                      key={index}
-                      href={portal.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-150"
-                      onClick={() => setPortalsMenuOpen(false)}
-                    >
-                      <span className="mr-3 text-lg">{portal.icon}</span>
-                      <span>{portal.label}</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Mobile Menu Toggle */}
-            <div className="sm:hidden mobile-menu-container ml-2">
-              <button
-                onClick={toggleMobileMenu}
-                className="flex items-center justify-center w-8 h-8 rounded-md bg-[#e7fefe] bg-opacity-20 hover:bg-opacity-30 transition-all duration-200 focus:outline-none"
-                aria-label="Toggle mobile menu"
-              >
-                <svg
-                  className="w-5 h-5 text-[#e7fefe]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              {/* Portals Menu */}
+              <div className="relative portals-menu-container">
+                <button
+                  onClick={togglePortalsMenu}
+                  className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#e7fefe] bg-opacity-20 hover:bg-opacity-30 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#f9f871] focus:ring-opacity-50"
+                  aria-label="Portals menu"
+                  aria-expanded={portalsMenuOpen}
                 >
-                  {mobileMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  )}
-                </svg>
-              </button>
+                  <svg 
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-[#e7fefe]" 
+                    fill="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                  </svg>
+                </button>
+
+                {/* Portals Dropdown Menu */}
+                {portalsMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                    <div className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">
+                      Portal Access
+                    </div>
+                    {portalLinks.map((portal, index) => (
+                      <a
+                        key={index}
+                        href={portal.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-150"
+                        onClick={() => setPortalsMenuOpen(false)}
+                      >
+                        <span className="mr-3 text-lg">{portal.icon}</span>
+                        <span>{portal.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Menu Toggle */}
+              <div className="sm:hidden mobile-menu-container">
+                <button
+                  onClick={toggleMobileMenu}
+                  className="flex items-center justify-center w-8 h-8 rounded-md bg-[#e7fefe] bg-opacity-20 hover:bg-opacity-30 transition-all duration-200 focus:outline-none"
+                  aria-label="Toggle mobile menu"
+                >
+                  <svg
+                    className="w-5 h-5 text-[#e7fefe]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    {mobileMenuOpen ? (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    ) : (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    )}
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -155,6 +186,24 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
           {mobileMenuOpen && (
             <div className="sm:hidden mt-4 pb-4 border-t border-[#e7fefe] border-opacity-20">
               <div className="flex flex-col space-y-2 mt-4">
+                {/* Download App Button for Mobile */}
+                <button
+                  onClick={() => {
+                    handleDownloadApp();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="flex items-center px-3 py-2 text-sm font-semibold text-[#030455] bg-[#f9f871] rounded-md hover:bg-[#f4e4c9] transition-colors duration-200"
+                >
+                  <svg 
+                    className="w-4 h-4 mr-2" 
+                    fill="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                  </svg>
+                  Download Offline App
+                </button>
+
                 {navLinks.map((link, index) => (
                   <Link
                     key={index}

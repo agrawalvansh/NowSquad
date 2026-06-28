@@ -112,12 +112,11 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
                 className="flex items-center shrink-0"
                 aria-label="ResQLink Home"
               >
-                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-200" style={{ width: '120px', height: '32px' }}>
+                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-200 px-2 py-1">
                   <img
-                    src="/logo/logo.png"
+                    src="/logo/logo-wide.png"
                     alt="ResQLink"
-                    className="w-full h-full object-contain"
-                    style={{ transform: 'scale(2.2)' }}
+                    className="h-6 sm:h-7 w-auto object-contain"
                   />
                 </div>
               </a>

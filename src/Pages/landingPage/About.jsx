@@ -124,10 +124,8 @@ const AboutSection = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-20 lg:py-14 relative">
+      <section id="OurSolution" className="py-20 lg:py-14 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={isHowItWorksInView ? { opacity: 1, y: 0 } : {}}

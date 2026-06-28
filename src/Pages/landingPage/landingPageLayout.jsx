@@ -9,10 +9,18 @@ function landingPageLayout() {
     return (
         <>
             <Header />
-            <LandingPage />
-            <About />
-            <FAQs />
-            <Team />
+            <div id="Home">
+              <LandingPage />
+            </div>
+            <div id="About">
+              <About />
+            </div>
+            <div id="FAQs">
+              <FAQs />
+            </div>
+            <div id="Team">
+              <Team />
+            </div>
             <Footer />
         </>
     );

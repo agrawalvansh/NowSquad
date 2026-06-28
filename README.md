@@ -19,12 +19,12 @@
 
 <p align="center">
   <a href="https://youtu.be/oHa1zSCVmkA">🎬 Watch Demo Video</a> ·
-  <a href="#">🌐 Visit Website</a>
+  <a href="https://nowsquad.vercel.app/">🌐 Visit Website</a>
 </p>
 
 ---
 
-## 🚨 The Problem
+## The Problem
 
 During disasters like floods, cyclones, or earthquakes, the biggest challenge is **communication and coordination** between authorities, volunteers, and victims:
 
@@ -36,7 +36,7 @@ This leads to **slow response times and loss of lives**.
 
 ---
 
-## 💡 Our Solution
+## Our Solution
 
 **ResQLink** is a unified, real-time disaster management platform that connects **citizens, volunteers, and authorities** on a single intelligent system — powered by **ServiceNow**.
 
@@ -55,19 +55,19 @@ We provide two core services:
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ```mermaid
 flowchart TB
-    subgraph Users["👥 User-Facing Layer"]
-        CP["🧑‍💻 Citizen Portal"]
-        VP["🤝 Volunteer Portal"]
-        DP["🏛️ Department Portal"]
-        AW["⚙️ Admin Workspace"]
-        OW["🛡️ Officer Workspace"]
+    subgraph Users["User-Facing Layer"]
+        CP["Citizen Portal"]
+        VP["Volunteer Portal"]
+        DP["Department Portal"]
+        AW["Admin Workspace"]
+        OW["Officer Workspace"]
     end
 
-    subgraph SN["☁️ ServiceNow Platform"]
+    subgraph SN["ServiceNow Platform"]
         SP["Service Portal"]
         FD["Flow Designer"]
         PA["Performance Analytics & Dashboards"]
@@ -77,13 +77,13 @@ flowchart TB
         NF["Notifications - SMS / Email / Push"]
     end
 
-    subgraph EXT["🌐 External Integrations"]
+    subgraph EXT["External Integrations"]
         OWM["OpenWeatherMap API"]
         GM["Google Maps API"]
         IMD["IMD / NOAA / USGS"]
     end
 
-    subgraph OFFLINE["📱 Offline Layer"]
+    subgraph OFFLINE["Offline Layer"]
         APK["Android APK"]
         P2P["P2P via Bluetooth / Wi-Fi Direct"]
     end
@@ -102,9 +102,9 @@ flowchart TB
 
 ---
 
-## 🖥️ Portals & Workspaces
+## Portals & Workspaces
 
-### 1. 🧑‍💻 Citizen Portal
+### 1. Citizen Portal
 > For citizens during emergencies
 
 - **Emergency Alerts** — Real-time disaster warnings (earthquake, flood, cyclone)
@@ -113,7 +113,7 @@ flowchart TB
 - **Live Location Map** — Auto-shares location so responders can identify where help is needed
 - **Get Help** — Direct connection to support and guidance
 
-### 2. 🤝 Volunteer Portal
+### 2. Volunteer Portal
 > For volunteers managing ground operations
 
 - **Active Tasks** — View tasks currently assigned based on location and skills
@@ -122,7 +122,7 @@ flowchart TB
 - **Live Location Map** — Enables coordinators to assign tasks effectively
 - **Get Help** — Direct assistance channel
 
-### 3. 🏛️ Department Portal
+### 3. Department Portal
 > For government department officials
 
 - **Active Tasks** — View and manage assigned department tasks
@@ -131,7 +131,7 @@ flowchart TB
 - **Announcements** — Stay informed about broadcast alerts
 - **Knowledge Base** — Access categorized articles and FAQs for department operations
 
-### 4. 🛡️ Department Officer Workspace
+### 4. Department Officer Workspace
 > For ground-level rescue officers
 
 - **Dashboard** — Summary of active alerts and pending approvals
@@ -140,7 +140,7 @@ flowchart TB
 - **Schedules** — Upcoming drills, inspections, and preparedness events
 - **Department Sections** — Health, Fire, Roads & Infrastructure, Municipal — each with dedicated alerts and tasks
 
-### 5. ⚙️ Admin Workspace
+### 5. Admin Workspace
 > For platform administrators
 
 - **Command Center** — Create alerts, assign volunteers, view tickets, generate reports
@@ -151,7 +151,7 @@ flowchart TB
 
 ---
 
-## 📱 Offline SOS App
+## Offline SOS App
 
 One of the most innovative features of ResQLink is the **offline Android application** for disaster scenarios where internet connectivity is unavailable.
 
@@ -159,14 +159,14 @@ One of the most innovative features of ResQLink is the **offline Android applica
 
 ```mermaid
 sequenceDiagram
-    actor V as 🆘 Victim<br/>(No Internet)
+    actor V as Victim<br/>(No Internet)
     participant APP_V as Victim App
     participant P2P as P2P Channel<br/>(Bluetooth / Wi-Fi Direct)
     participant APP_VOL as Volunteer App
-    actor VOL as 🤝 Volunteer<br/>(No Internet)
-    participant SN as ☁️ ServiceNow
+    actor VOL as Volunteer<br/>(No Internet)
+    participant SN as ServiceNow
 
-    Note over V, VOL: ⚡ Disaster Zone — No Internet Connectivity
+    Note over V, VOL: Disaster Zone — No Internet Connectivity
 
     V->>APP_V: Opens offline app
     APP_V->>APP_V: Auto-captures GPS location
@@ -185,7 +185,7 @@ sequenceDiagram
     APP_VOL->>P2P: Acknowledgment sent
     P2P->>APP_V: Help is on the way
 
-    Note over APP_VOL, SN: 🌐 Internet Restored
+    Note over APP_VOL, SN: Internet Restored
 
     APP_VOL->>SN: Syncs offline SOS as ticket
     SN->>SN: Auto-assigns to department
@@ -197,11 +197,11 @@ sequenceDiagram
 3. The devices connect without internet and the SOS request is transmitted
 4. When connectivity is restored, the ticket is synced to the ServiceNow platform
 
-> 📥 [Download the Offline App (APK)](public/apk/HackNow%20Offline%20App!!.apk)
+> [Download the Offline App (APK)](public/apk/HackNow%20Offline%20App!!.apk)
 
 ---
 
-## 🌦️ Live Weather Monitoring Dashboard
+## Live Weather Monitoring Dashboard
 
 The landing page features an **India Weather Monitoring Dashboard** with:
 
@@ -212,7 +212,7 @@ The landing page features an **India Weather Monitoring Dashboard** with:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### ServiceNow Platform
 | Module | Usage |
@@ -240,7 +240,7 @@ The landing page features an **India Weather Monitoring Dashboard** with:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Node.js** v18+ and npm
@@ -286,7 +286,7 @@ The app will be available at `http://localhost:5173`
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 NowSquad/
@@ -326,7 +326,7 @@ NowSquad/
 
 ---
 
-## 🏆 Achievement
+## Achievement
 
 <p align="center">
   <img src="public/teamImgs/Team Photo.JPG" alt="Team NowSquad receiving the 2nd Prize at SNU HackNow India" width="700" />
@@ -338,7 +338,7 @@ NowSquad/
 
 > **🥈 2nd Prize Winner** at **SNU HackNow India 2025** — a national-level hackathon with **263+ participating teams** from across India. ResQLink stood out for its innovative approach to disaster management, combining ServiceNow’s enterprise platform with offline P2P communication to bridge the critical gap during emergencies.
 
-### 📄 Detailed Documentation
+### Detailed Documentation
 
 For a deeper dive into the project, refer to our original hackathon submission materials:
 
@@ -349,7 +349,7 @@ For a deeper dive into the project, refer to our original hackathon submission m
 
 ---
 
-## 👥 Team NowSquad
+## Team NowSquad
 
 Built with ❤️ by **Team NowSquad** from **GITAM University**
 
@@ -359,12 +359,12 @@ Built with ❤️ by **Team NowSquad** from **GITAM University**
 | **Bandi Gayathri** | ServiceNow Developer |
 | **Munagapati Bhavana** | ServiceNow Developer |
 | **Kaditham Gowtham** | UI/UX Designer |
-| **Rudraksha Ravinder** | Documentation |
+| **Rudraksha Ravinder** | ServiceNow Developer |
 | **Vivek Kumar Pradhan** | Tester |
 
 ---
 
-## 📄 License
+## License
 
 This project was built as part of the **SNU HackNow India** hackathon. All rights reserved by Team NowSquad.
 

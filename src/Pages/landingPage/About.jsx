@@ -377,17 +377,6 @@ const AboutSection = () => {
                     <span style={{ color: '#030455', opacity: 0.6 }}>Location-based Alerts</span>
                   </li>
                 </ul>
-
-                {/* Hover Action */}
-                <div className="mt-auto pt-6 border-t border-gray-100">
-                  <a href="#" className="inline-flex items-center text-sm font-semibold group-hover:underline"
-                     style={{ color: '#030455' }}>
-                    Learn More
-                    <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
               </div>
             </motion.div>
 
@@ -432,17 +421,6 @@ const AboutSection = () => {
                     <span style={{ color: '#030455', opacity: 0.6 }}>Impact Dashboard</span>
                   </li>
                 </ul>
-
-                {/* Hover Action */}
-                <div className="mt-auto pt-6 border-t border-gray-100">
-                  <a href="#" className="inline-flex items-center text-sm font-semibold group-hover:underline"
-                     style={{ color: '#030455' }}>
-                    Learn More
-                    <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
               </div>
             </motion.div>
 
@@ -487,17 +465,6 @@ const AboutSection = () => {
                     <span style={{ color: '#030455', opacity: 0.6 }}>Cross-dept Workflow</span>
                   </li>
                 </ul>
-
-                {/* Hover Action */}
-                <div className="mt-auto pt-6 border-t border-gray-100">
-                  <a href="#" className="inline-flex items-center text-sm font-semibold group-hover:underline"
-                     style={{ color: '#030455' }}>
-                    Learn More
-                    <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
               </div>
             </motion.div>
 
@@ -542,17 +509,6 @@ const AboutSection = () => {
                     <span style={{ color: '#030455', opacity: 0.6 }}>Analytics & Reports</span>
                   </li>
                 </ul>
-
-                {/* Hover Action */}
-                <div className="mt-auto pt-6 border-t border-gray-100">
-                  <a href="#" className="inline-flex items-center text-sm font-semibold group-hover:underline"
-                     style={{ color: '#030455' }}>
-                    Learn More
-                    <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
               </div>
             </motion.div>
           </motion.div>

@@ -4,7 +4,7 @@ import Header from './Header';
 import LandingPage from './LandingPage';
 import FAQs from './FAQs';
 import About from './About';
-import Team from './Team';
+import Achievement from './Achievement';
 function landingPageLayout() {
     return (
         <>
@@ -15,11 +15,11 @@ function landingPageLayout() {
             <div id="About">
               <About />
             </div>
+            <div id="Achievement">
+              <Achievement />
+            </div>
             <div id="FAQs">
               <FAQs />
-            </div>
-            <div id="Team">
-              <Team />
             </div>
             <Footer />
         </>

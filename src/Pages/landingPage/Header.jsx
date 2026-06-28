@@ -68,8 +68,8 @@ const LandingPageNavbar = ({ user, handleLogout }) => {
     { href: '#Home', label: 'Home', sectionId: 'Home' },
     { href: '#About', label: 'About', sectionId: 'About' },
     { href: '#OurSolution', label: 'Our Solution', sectionId: 'OurSolution' },
-    { href: '#FAQs', label: 'FAQs', sectionId: 'FAQs' },
-    { href: '#Team', label: 'Team', sectionId: 'Team' }
+    { href: '#Achievement', label: 'Achievement', sectionId: 'Achievement' },
+    { href: '#FAQs', label: 'FAQs', sectionId: 'FAQs' }
   ];
 
   const portalLinks = [
